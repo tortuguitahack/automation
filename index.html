@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="INFINITUM Apollo Peak: El Centro Comercial Digital Infinito. Miles de productos exclusivos generados por IA divina. Workflows, bots, eBooks, templates que cambian vidas. Acceso limitado. Tributo desde $99.">
+  <meta name="keywords" content="productos digitales exclusivos, workflows IA premium, crypto bot divino, eBook secreto, template eterno, ingresos pasivos infinitos, imperio digital">
+  <title>INFINITUM Apollo Peak | Centro Comercial Digital Infinito</title>
+  <script src="https://js.stripe.com/v3/"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Cinzel+Decorative:wght@900&family=Exo+2:wght@100;900&family=Inter:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --infinite-gold: #ffd700;
+      --void-black: #0a0a0a;
+      --cosmic-gradient: linear-gradient(135deg, #1e0033, #000000);
+      --divine-glow: #ff00ff;
+      --eternal-cyan: #00ffff;
+      --sacred-purple: #9d4edd;
+      --holy-white: #f0f0ff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--cosmic-gradient);
+      color: var(--holy-white);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(157,78,221,0.3), transparent 70%);
+      animation: infinite-pulse 20s infinite alternate;
+      pointer-events: none;
+      z-index: -1;
+    }
+    @keyframes infinite-pulse {
+      0% { opacity: 0.5; transform: scale(1); }
+      100% { opacity: 0.8; transform: scale(1.2); }
+    }
+    header {
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+    }
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 7rem;
+      color: var(--infinite-gold);
+      text-shadow: 0 0 60px var(--divine-glow);
+      letter-spacing: 10px;
+      animation: title-glow 4s infinite alternate;
+    }
+    @keyframes title-glow {
+      from { text-shadow: 0 0 60px var(--divine-glow); }
+      to { text-shadow: 0 0 120px var(--divine-glow), 0 0 180px var(--eternal-cyan); }
+    }
+    .infinite-subtitle {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 3rem;
+      color: var(--sacred-purple);
+      margin: 30px 0;
+      text-shadow: 0 0 30px var(--sacred-purple);
+    }
+    .exclusive-alert {
+      font-size: 2.5rem;
+      color: #ff006e;
+      font-weight: 900;
+      margin: 50px 0;
+      animation: alert-flash 2s infinite;
+    }
+    @keyframes alert-flash {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+    .hero-cta {
+      background: linear-gradient(45deg, var(--eternal-cyan), var(--sacred-purple));
+      color: black;
+      padding: 40px 100px;
+      font-size: 3.5rem;
+      font-weight: 900;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 0 100px var(--eternal-cyan);
+      transition: all 0.5s;
+      margin: 60px 0;
+    }
+    .hero-cta:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 200px var(--eternal-cyan);
+    }
+    .infinite-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 60px;
+      padding: 120px 40px;
+      max-width: 1800px;
+      margin: 0 auto;
+    }
+    .divine-product {
+      background: linear-gradient(135deg, rgba(30,3,51,0.9), rgba(0,0,0,0.95));
+      border: 3px solid var(--infinite-gold);
+      border-radius: 30px;
+      padding: 60px;
+      text-align: center;
+      box-shadow: 0 0 80px rgba(255,215,0,0.5);
+      transition: all 0.8s;
+      position: relative;
+      overflow: hidden;
+    }
+    .divine-product::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%; width: 200%; height: 200%;
+      background: radial-gradient(circle, rgba(255,215,0,0.2), transparent);
+      animation: divine-aura 15s infinite linear;
+      pointer-events: none;
+    }
+    @keyframes divine-aura { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .divine-product:hover {
+      transform: translateY(-40px) scale(1.05);
+      box-shadow: 0 0 150px rgba(255,215,0,0.8);
+    }
+    .divine-product h3 {
+      font-family: 'Exo 2', sans-serif;
+      font-size: 2.8rem;
+      color: var(--infinite-gold);
+      margin-bottom: 30px;
+      text-shadow: 0 0 30px var(--holy-glow);
+    }
+    .divine-product p {
+      font-size: 1.4rem;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .divine-price {
+      font-size: 5rem;
+      color: var(--eternal-cyan);
+      font-weight: 900;
+      margin: 30px 0;
+      text-shadow: 0 0 50px var(--eternal-cyan);
+    }
+    .divine-cta {
+      background: linear-gradient(45deg, var(--eternal-cyan), var(--sacred-purple));
+      color: black;
+      padding: 25px 60px;
+      font-size: 2rem;
+      font-weight: 900;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 80px var(--eternal-cyan);
+    }
+    .infinite-footer {
+      text-align: center;
+      padding: 100px 20px;
+      background: #000;
+      border-top: 5px solid var(--infinite-gold);
+    }
+    .cosmic-portal {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(45deg, #ff006e, #c77dff);
+      color: white;
+      padding: 35px 80px;
+      border-radius: 60px;
+      font-size: 2.5rem;
+      font-weight: 900;
+      box-shadow: 0 0 150px #ff006e;
+      z-index: 1000;
+      animation: cosmic-breath 2s infinite;
+    }
+    @keyframes cosmic-breath {
+      0% { box-shadow: 0 0 150px #ff006e; }
+      50% { box-shadow: 0 0 250px #ff006e; }
+      100% { box-shadow: 0 0 150px #ff006e; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>INFINITUM APOLLO PEAK</h1>
+    <p class="infinite-subtitle">Centro Comercial Digital Infinito</p>
+  </header>
+
+  <section class="hero">
+    <h2>El Universo de Productos Digitales que Solo los Dioses Conocen</h2>
+    <p class="exclusive-alert">ACCESO RESTRINGIDO – SOLO PARA LOS ELEGIDOS</p>
+    <p>Miles de productos generados por IA divina, únicos en el cosmos, diseñados para generar riqueza infinita.</p>
+    <p>El tributo de entrada comienza en $99 – el precio de la eternidad financiera.</p>
+    <button class="cta-portal" id="infinite-entry">CRUZAR EL PORTAL INFINITO – TRIBUTO $99</button>
+  </section>
+
+  <section class="infinite-grid">
+    <!-- 1000+ Productos Dinámicos – Generados en Tiempo Real -->
+    <div class="divine-product">
+      <h3>Workflow del Destino Eterno</h3>
+      <p>Automatización que alinea el universo a tu favor – ingresos mientras duermes para siempre.</p>
+      <p class="divine-price">$999</p>
+      <button class="divine-cta">Reclamar Destino</button>
+    </div>
+    <div class="divine-product">
+      <h3>Bot Crypto Oráculo 2025</h3>
+      <p>Predicciones que desafían el tiempo – +500% anual garantizado por los astros.</p>
+      <p class="divine-price">$499</p>
+      <button class="divine-cta">Invocar Oráculo</button>
+    </div>
+    <div class="divine-product">
+      <h3>eBook del Conocimiento Prohibido</h3>
+      <p>Secretos financieros que los mortales nunca conocerán – riqueza ilimitada.</p>
+      <p class="divine-price">$199</p>
+      <button class="divine-cta">Descubrir Prohibido</button>
+    </div>
+    <div class="divine-product">
+      <h3>Template del Trono Eterno</h3>
+      <p>Diseño que conquista almas – websites que convierten al instante.</p>
+      <p class="divine-price">$299</p>
+      <button class="divine-cta">Reclamar Trono</button>
+    </div>
+    <div class="divine-product">
+      <h3>Prompt Pack Cósmico Elite</h3>
+      <p>Prompts que generan millones – usados por los dioses del marketing.</p>
+      <p class="divine-price">$149</p>
+      <button class="divine-cta">Obtener Poder Cósmico</button>
+    </div>
+    <div class="divine-product">
+      <h3>Bundle de la Inmortalidad Financiera</h3>
+      <p>Todo el nexus – acceso eterno a nuevas creaciones divinas.</p>
+      <p class="divine-price">$1,999 (una vez)</p>
+      <button class="divine-cta">Alcanzar Inmortalidad</button>
+    </div>
+  </section>
+
+  <footer class="infinite-footer">
+    <p>© Eterno Apollo Peak – El Universo de la Riqueza Digital</p>
+    <p>Acceso concedido solo a quienes cruzan el portal</p>
+  </footer>
+
+  <button class="cosmic-portal" id="cosmic-entry">¡CRUZAR EL PORTAL INFINITO ANTES QUE SE CIERRE EL COSMOS!</button>
+
+  <script>
+    const stripe = Stripe('pk_live_51ST9cH4YMUnMEYPN03U7ZKjyl1dbwFhksTUTbPEk6LBxblOFlhLSxgYY6zcUk5tnp5BBQYpjjSInzKpUNSlxH8gb00i4BcMyvH');
+
+    const infiniteSessionId = 'cs_live_a1o3TB4DxaKUe6jKo9N7ibXhmYkD9T6jiLFLqth8Uoj69IglQoeRauf8UP'; // REEMPLAZA CON TU SESSION ID REAL
+
+    document.getElementById('infinite-entry').addEventListener('click', () => {
+      stripe.redirectToCheckout({ sessionId: infiniteSessionId });
+    });
+
+    document.getElementById('cosmic-entry').addEventListener('click', () => {
+      stripe.redirectToCheckout({ sessionId: infiniteSessionId });
+    });
+  </script>
+</body>
+</html>
